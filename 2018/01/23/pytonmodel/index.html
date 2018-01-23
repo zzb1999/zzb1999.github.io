@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="python," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="活着就是为了改变世界。">
+<meta name="description" content="模块发布1.mymodule目录结构体如下：12345678910.├── setup.py├── suba│   ├── aa.py│   ├── bb.py│   └── __init__.py└── subb    ├── cc.py    ├── dd.py    └── __init__.py 2.编辑setup.py文件py_modules需指明所需包含的py文件123from dis">
+<meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="&#39;test&#39;">
-<meta property="og:url" content="http://yoursite.com/2018/01/21/test/index.html">
+<meta property="og:title" content="Python模块发布和安装">
+<meta property="og:url" content="http://yoursite.com/2018/01/23/pytonmodel/index.html">
 <meta property="og:site_name" content="至尊宝的博客">
-<meta property="og:description" content="活着就是为了改变世界。">
+<meta property="og:description" content="模块发布1.mymodule目录结构体如下：12345678910.├── setup.py├── suba│   ├── aa.py│   ├── bb.py│   └── __init__.py└── subb    ├── cc.py    ├── dd.py    └── __init__.py 2.编辑setup.py文件py_modules需指明所需包含的py文件123from dis">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-21T13:11:59.245Z">
+<meta property="og:updated_time" content="2018-01-23T11:44:48.506Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&#39;test&#39;">
-<meta name="twitter:description" content="活着就是为了改变世界。">
+<meta name="twitter:title" content="Python模块发布和安装">
+<meta name="twitter:description" content="模块发布1.mymodule目录结构体如下：12345678910.├── setup.py├── suba│   ├── aa.py│   ├── bb.py│   └── __init__.py└── subb    ├── cc.py    ├── dd.py    └── __init__.py 2.编辑setup.py文件py_modules需指明所需包含的py文件123from dis">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/21/test/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/23/pytonmodel/"/>
 
 
 
 
 
-  <title>'test' | 至尊宝的博客</title>
+  <title>Python模块发布和安装 | 至尊宝的博客</title>
   
 
 
@@ -264,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/21/test/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/23/pytonmodel/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="至尊宝">
@@ -281,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">'test'</h1>
+          <h1 class="post-title" itemprop="name headline">Python模块发布和安装</h1>
         
 
         <div class="post-meta">
@@ -293,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-21T21:11:59+08:00">
-                2018-01-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-23T19:29:47+08:00">
+                2018-01-23
               </time>
             
 
@@ -303,6 +304,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -331,7 +354,17 @@
       
 
       
-        
+        <h3 id="模块发布"><a href="#模块发布" class="headerlink" title="模块发布"></a>模块发布</h3><p>1.mymodule目录结构体如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── setup.py</span><br><span class="line">├── suba</span><br><span class="line">│   ├── aa.py</span><br><span class="line">│   ├── bb.py</span><br><span class="line">│   └── __init__.py</span><br><span class="line">└── subb</span><br><span class="line">    ├── cc.py</span><br><span class="line">    ├── dd.py</span><br><span class="line">    └── __init__.py</span><br></pre></td></tr></table></figure></p>
+<p>2.编辑setup.py文件<br>py_modules需指明所需包含的py文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from distutils.core import setup</span><br><span class="line"></span><br><span class="line">setup(name=<span class="string">"ixysec"</span>, version=<span class="string">"1.0"</span>, description=<span class="string">"ixysec's module"</span>, author=<span class="string">"ixysec"</span>, py_modules=[<span class="string">'suba.aa'</span>, <span class="string">'suba.bb'</span>, <span class="string">'subb.cc'</span>, <span class="string">'subb.dd'</span>])</span><br></pre></td></tr></table></figure></p>
+<p>3.构建模块<br>python setup.py build<br>构建后目录结构<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── build</span><br><span class="line">│   └── lib.linux-i686-2.7</span><br><span class="line">│       ├── suba</span><br><span class="line">│       │   ├── aa.py</span><br><span class="line">│       │   ├── bb.py</span><br><span class="line">│       │   └── __init__.py</span><br><span class="line">│       └── subb</span><br><span class="line">│           ├── cc.py</span><br><span class="line">│           ├── dd.py</span><br><span class="line">│           └── __init__.py</span><br><span class="line">├── setup.py</span><br><span class="line">├── suba</span><br><span class="line">│   ├── aa.py</span><br><span class="line">│   ├── bb.py</span><br><span class="line">│   └── __init__.py</span><br><span class="line">└── subb</span><br><span class="line">    ├── cc.py</span><br><span class="line">    ├── dd.py</span><br><span class="line">    └── __init__.py</span><br></pre></td></tr></table></figure></p>
+<p>4.生成发布压缩包<br>python setup.py sdist<br>打包后,生成最终发布压缩包ixysec-1.0.tar.gz , 目录结构<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── build</span><br><span class="line">│   └── lib.linux-i686-2.7</span><br><span class="line">│       ├── suba</span><br><span class="line">│       │   ├── aa.py</span><br><span class="line">│       │   ├── bb.py</span><br><span class="line">│       │   └── __init__.py</span><br><span class="line">│       └── subb</span><br><span class="line">│           ├── cc.py</span><br><span class="line">│           ├── dd.py</span><br><span class="line">│           └── __init__.py</span><br><span class="line">├── dist</span><br><span class="line">│   └── ixysec-1.0.tar.gz</span><br><span class="line">├── MANIFEST</span><br><span class="line">├── setup.py</span><br><span class="line">├── suba</span><br><span class="line">│   ├── aa.py</span><br><span class="line">│   ├── bb.py</span><br><span class="line">│   └── __init__.py</span><br><span class="line">└── subb</span><br><span class="line">    ├── cc.py</span><br><span class="line">    ├── dd.py</span><br><span class="line">    └── __init__.py</span><br></pre></td></tr></table></figure></p>
+<h3 id="模块安装"><a href="#模块安装" class="headerlink" title="模块安装"></a>模块安装</h3><ol>
+<li>找到模块的压缩包</li>
+<li>解压</li>
+<li>进入文件夹</li>
+<li>执行命令python setup.py install</li>
+</ol>
+
       
     </div>
     
@@ -346,6 +379,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          
+        </div>
+      
 
       
       
@@ -355,15 +394,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/01/21/test/" rel="next" title="'test'">
+                <i class="fa fa-chevron-left"></i> 'test'
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/23/pytonmodel/" rel="prev" title="Python模块发布和安装">
-                Python模块发布和安装 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -415,8 +454,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -476,6 +524,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#模块发布"><span class="nav-number">1.</span> <span class="nav-text">模块发布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块安装"><span class="nav-number">2.</span> <span class="nav-text">模块安装</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

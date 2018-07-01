@@ -97,7 +97,7 @@
 <meta property="og:image" content="http://p3ek8hcdl.bkt.clouddn.com/image/pyjc010.png">
 <meta property="og:image" content="http://p3ek8hcdl.bkt.clouddn.com/image/pyjc011.png">
 <meta property="og:image" content="http://p3ek8hcdl.bkt.clouddn.com/image/py001.gif">
-<meta property="og:updated_time" content="2018-07-01T04:11:57.279Z">
+<meta property="og:updated_time" content="2018-07-01T04:29:50.209Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python语法基础">
 <meta name="twitter:image" content="http://p3ek8hcdl.bkt.clouddn.com/image/python.jpg">
@@ -358,7 +358,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,811 字
+                  3,807 字
                 </span>
               
 
@@ -481,15 +481,123 @@
 <ul>
 <li>算术运算符</li>
 </ul>
-<p>下面以a=10 ,b=20为例进行计算<br>|运算符|描述|实例|<br>|:—:|:—:|:—:|<br>|+|    加|    两个对象相加 a + b 输出结果 30|<br>|-|    减|    得到负数或是一个数减去另一个数 a - b 输出结果 -10|<br>|<em>|    乘|    两个数相乘或是返回一个被重复若干次的字符串 a </em> b 输出结果 200|<br>|/|    除|    x除以y b / a 输出结果 2|<br>|//|    取整除|    返回商的整数部分 9//2 输出结果 4 , 9.0//2.0 输出结果 4.0|<br>|%|    取余|    返回除法的余数 b % a 输出结果 0|<br>|<strong>|    幂|    返回x的y次幂 a</strong>b 为10的20次方， 输出结果 100000000000000000000|</p>
+<p>下面以a=10 ,b=20为例进行计算</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">加</td>
+<td style="text-align:center">两个对象相加 a + b 输出结果 30</td>
+</tr>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">减</td>
+<td style="text-align:center">得到负数或是一个数减去另一个数 a - b 输出结果 -10</td>
+</tr>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center">乘</td>
+<td style="text-align:center">两个数相乘或是返回一个被重复若干次的字符串 a * b 输出结果 200</td>
+</tr>
+<tr>
+<td style="text-align:center">/</td>
+<td style="text-align:center">除</td>
+<td style="text-align:center">x除以y b / a 输出结果 2</td>
+</tr>
+<tr>
+<td style="text-align:center">//</td>
+<td style="text-align:center">取整除</td>
+<td style="text-align:center">返回商的整数部分 9//2 输出结果 4 , 9.0//2.0 输出结果 4.0</td>
+</tr>
+<tr>
+<td style="text-align:center">%</td>
+<td style="text-align:center">取余</td>
+<td style="text-align:center">返回除法的余数 b % a 输出结果 0</td>
+</tr>
+<tr>
+<td style="text-align:center">**</td>
+<td style="text-align:center">幂</td>
+<td style="text-align:center">返回x的y次幂 a**b 为10的20次方， 输出结果 100000000000000000000</td>
+</tr>
+</tbody>
+</table>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; 9/2.0</span><br><span class="line">4.5</span><br><span class="line">&gt;&gt;&gt; 9//2.0</span><br><span class="line">4.0</span><br></pre></td></tr></table></figure>
 <ul>
-<li>赋值运算符<br>|运算符|描述|实例|<br>|:—:|:—:|:—:|<br>|=|    赋值运算符|    把=号右边的结果给左边的变量 num=1+2*3 结果num的值为7|</li>
+<li>赋值运算符</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">=</td>
+<td style="text-align:center">赋值运算符</td>
+<td style="text-align:center">把=号右边的结果给左边的变量 num=1+2*3 结果num的值为7</td>
+</tr>
+</tbody>
+</table>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a, b = 1, 2</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">1</span><br><span class="line">&gt;&gt;&gt; b</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
 <ul>
-<li>复合赋值运算符<br>|运算符|描述|实例|<br>|:—:|:—:|:—:|<br>|+=|    加法赋值运算符|    c += a 等效于 c = c + a|<br>|-=|    减法赋值运算符|    c -= a 等效于 c = c - a|<br>|<em>=|    乘法赋值运算符|    c </em>= a 等效于 c = c <em> a|<br>|/=|    除法赋值运算符|    c /= a 等效于 c = c / a|<br>|%=|    取模赋值运算符|    c %= a 等效于 c = c % a|<br>|<strong>=|    幂赋值运算符|    c </strong>= a 等效于 c = c *</em> a|<br>|//=|    取整除赋值运算符|    c //= a 等效于 c = c // a|</li>
+<li>复合赋值运算符</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">+=</td>
+<td style="text-align:center">加法赋值运算符</td>
+<td style="text-align:center">c += a 等效于 c = c + a</td>
+</tr>
+<tr>
+<td style="text-align:center">-=</td>
+<td style="text-align:center">减法赋值运算符</td>
+<td style="text-align:center">c -= a 等效于 c = c - a</td>
+</tr>
+<tr>
+<td style="text-align:center">*=</td>
+<td style="text-align:center">乘法赋值运算符</td>
+<td style="text-align:center">c <em>= a 等效于 c = c </em> a</td>
+</tr>
+<tr>
+<td style="text-align:center">/=</td>
+<td style="text-align:center">除法赋值运算符</td>
+<td style="text-align:center">c /= a 等效于 c = c / a</td>
+</tr>
+<tr>
+<td style="text-align:center">%=</td>
+<td style="text-align:center">取模赋值运算符</td>
+<td style="text-align:center">c %= a 等效于 c = c % a</td>
+</tr>
+<tr>
+<td style="text-align:center">**=</td>
+<td style="text-align:center">幂赋值运算符</td>
+<td style="text-align:center">c <strong>= a 等效于 c = c </strong> a</td>
+</tr>
+<tr>
+<td style="text-align:center">//=</td>
+<td style="text-align:center">取整除赋值运算符</td>
+<td style="text-align:center">c //= a 等效于 c = c // a</td>
+</tr>
+</tbody>
+</table>
 <h3 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h3><h4 id="常用的数据类型转换"><a href="#常用的数据类型转换" class="headerlink" title="常用的数据类型转换"></a>常用的数据类型转换</h4><table>
 <thead>
 <tr>
@@ -595,8 +703,85 @@
 <li>使用if语句，来判断 age&gt;=18是否成立</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">age = input(&quot;请输入年龄：&quot;)</span><br><span class="line">if int(age) &gt;= 18:</span><br><span class="line">    print(&quot;哥，已成年，网吧可以去了&quot;)</span><br></pre></td></tr></table></figure>
-<h3 id="比较、关系运算符"><a href="#比较、关系运算符" class="headerlink" title="比较、关系运算符"></a>比较、关系运算符</h3><h4 id="比较-即关系-运算符"><a href="#比较-即关系-运算符" class="headerlink" title="比较(即关系)运算符"></a>比较(即关系)运算符</h4><p>python中的比较运算符如下表<br>|运算符|描述|示例|<br>|:—:|:—:|:—:|<br>|==    |检查两个操作数的值是否相等，如果是则条件变为真。|    如a=3,b=3则（a == b) 为 true.<br>|!=    |检查两个操作数的值是否相等，如果值不相等，则条件变为真。    |如a=1,b=3则(a != b) 为 true.<br>|&lt;&gt;    |检查两个操作数的值是否相等，如果值不相等，则条件变为真。    |如a=1,b=3则(a &lt;&gt; b) 为 true。这个类似于 != 运算符<br>|&gt;    |检查左操作数的值是否大于右操作数的值，如果是，则条件成立。    |如a=7,b=3则(a &gt; b) 为 true.<br>|&lt;    |检查左操作数的值是否小于右操作数的值，如果是，则条件成立。    |如a=7,b=3则(a &lt; b) 为 false.<br>|<code>&gt;=</code>    |检查左操作数的值是否大于或等于右操作数的值，如果是，则条件成立。    |如a=3,b=3则(a &gt;= b) 为 true.<br>|&lt;=    |检查左操作数的值是否小于或等于右操作数的值，如果是，则条件成立。    |如a=3,b=3则(a &lt;= b) 为 true.|</p>
-<h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h4><p>a=10 b=20<br>|运算符|逻辑表达式|描述|示例|<br>|:—:|:—:|:—:|:—:|<br>|and|    x and y    |布尔”与” - 如果 x 为 False，x and y 返回 False，否则它返回 y 的计算值。|    (a and b) 返回 20。<br>|or    |x or y    |布尔”或” - 如果 x 是 True，它返回 True，否则它返回 y 的计算值。|    (a or b) 返回 10。<br>|not|    not x|    布尔”非” - 如果 x 为 True，返回 False 。如果 x 为 False，它返回 True。|    not(a and b) 返回 False</p>
+<h3 id="比较、关系运算符"><a href="#比较、关系运算符" class="headerlink" title="比较、关系运算符"></a>比较、关系运算符</h3><h4 id="比较-即关系-运算符"><a href="#比较-即关系-运算符" class="headerlink" title="比较(即关系)运算符"></a>比较(即关系)运算符</h4><p>python中的比较运算符如下表</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">==</td>
+<td style="text-align:center">检查两个操作数的值是否相等，如果是则条件变为真。</td>
+<td style="text-align:center">如a=3,b=3则（a == b) 为 true.</td>
+</tr>
+<tr>
+<td style="text-align:center">!=</td>
+<td style="text-align:center">检查两个操作数的值是否相等，如果值不相等，则条件变为真。</td>
+<td style="text-align:center">如a=1,b=3则(a != b) 为 true.</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;&gt;</td>
+<td style="text-align:center">检查两个操作数的值是否相等，如果值不相等，则条件变为真。</td>
+<td style="text-align:center">如a=1,b=3则(a &lt;&gt; b) 为 true。这个类似于 != 运算符</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;</td>
+<td style="text-align:center">检查左操作数的值是否大于右操作数的值，如果是，则条件成立。</td>
+<td style="text-align:center">如a=7,b=3则(a &gt; b) 为 true.</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;</td>
+<td style="text-align:center">检查左操作数的值是否小于右操作数的值，如果是，则条件成立。</td>
+<td style="text-align:center">如a=7,b=3则(a &lt; b) 为 false.</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&gt;=</code></td>
+<td style="text-align:center">检查左操作数的值是否大于或等于右操作数的值，如果是，则条件成立。</td>
+<td style="text-align:center">如a=3,b=3则(a &gt;= b) 为 true.</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;=</td>
+<td style="text-align:center">检查左操作数的值是否小于或等于右操作数的值，如果是，则条件成立。</td>
+<td style="text-align:center">如a=3,b=3则(a &lt;= b) 为 true.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h4><p>a=10 b=20</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">逻辑表达式</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">and</td>
+<td style="text-align:center">x and y</td>
+<td style="text-align:center">布尔”与” - 如果 x 为 False，x and y 返回 False，否则它返回 y 的计算值。</td>
+<td style="text-align:center">(a and b) 返回 20。</td>
+</tr>
+<tr>
+<td style="text-align:center">or</td>
+<td style="text-align:center">x or y</td>
+<td style="text-align:center">布尔”或” - 如果 x 是 True，它返回 True，否则它返回 y 的计算值。</td>
+<td style="text-align:center">(a or b) 返回 10。</td>
+</tr>
+<tr>
+<td style="text-align:center">not</td>
+<td style="text-align:center">not x</td>
+<td style="text-align:center">布尔”非” - 如果 x 为 True，返回 False 。如果 x 为 False，它返回 True。</td>
+<td style="text-align:center">not(a and b) 返回 False</td>
+</tr>
+</tbody>
+</table>
+<p>a</p>
 
       
     </div>

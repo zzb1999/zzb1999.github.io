@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python,编程,基础,语法," />
+
+
+
+
+
+
+
+
+
+
+<meta name="keywords" content="Python,编程,基础,语法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python语法基础">
+<meta property="og:url" content="http://yoursite.com/2018/07/01/Python语法基础/index.html">
+<meta property="og:site_name" content="Mr.T&#39;blog">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p3ek8hcdl.bkt.clouddn.com/image/python.jpg">
+<meta property="og:image" content="http://p3ek8hcdl.bkt.clouddn.com/image/pyjc001.png">
+<meta property="og:image" content="http://p3ek8hcdl.bkt.clouddn.com/image/pyjc004.png">
+<meta property="og:image" content="http://p3ek8hcdl.bkt.clouddn.com/pyjc005.png">
+<meta property="og:image" content="http://p3ek8hcdl.bkt.clouddn.com/image/pyjc006.png">
+<meta property="og:image" content="http://p3ek8hcdl.bkt.clouddn.com/image/pyjc007.png">
+<meta property="og:image" content="http://p3ek8hcdl.bkt.clouddn.com/image/pyjc008.png">
+<meta property="og:image" content="http://p3ek8hcdl.bkt.clouddn.com/image/pyjc009.png">
+<meta property="og:image" content="http://p3ek8hcdl.bkt.clouddn.com/image/20180701103102.jpg">
+<meta property="og:image" content="http://p3ek8hcdl.bkt.clouddn.com/image/pyjc010.png">
+<meta property="og:image" content="http://p3ek8hcdl.bkt.clouddn.com/image/pyjc011.png">
+<meta property="og:image" content="http://p3ek8hcdl.bkt.clouddn.com/image/py001.gif">
+<meta property="og:updated_time" content="2018-07-01T04:11:57.279Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python语法基础">
+<meta name="twitter:image" content="http://p3ek8hcdl.bkt.clouddn.com/image/python.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/01/Python语法基础/"/>
+
+
+
+
+
+  <title>Python语法基础 | Mr.T'blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/zzb1999"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mr.T'blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">大多数人终将平庸的度过一生！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/01/Python语法基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.T">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.T'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python语法基础</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-01T09:17:50+08:00">
+                2018-07-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3,811 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  15 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://p3ek8hcdl.bkt.clouddn.com/image/python.jpg" alt=""><a id="more"></a></p>
+<h2 id="认识python和基础知识"><a href="#认识python和基础知识" class="headerlink" title="认识python和基础知识"></a>认识python和基础知识</h2><h3 id="认识python"><a href="#认识python" class="headerlink" title="认识python"></a>认识python</h3><p>Python是一种面向对象的解释型计算机程序设计语言，由荷兰人Guido van Rossum于1989年发明，第一个公开发行版发行于1991年。<br>Python是纯粹的自由软件， 源代码和解释器CPython遵循 GPL(GNU General Public License)协议。Python语法简洁清晰，特色之一是强制用空白符(white space)作为语句缩进。<br>Python具有丰富和强大的库。它常被昵称为胶水语言，能够把用其他语言制作的各种模块（尤其是C/C++）很轻松地联结在一起。常见的一种应用情形是，使用Python快速生成程序的原型（有时甚至是程序的最终界面），然后对其中有特别要求的部分，用更合适的语言改写，比如3D游戏中的图形渲染模块，性能要求特别高，就可以用C/C++重写，而后封装为Python可以调用的扩展类库。需要注意的是在您使用扩展类库时可能需要考虑平台问题，某些可能不提供跨平台的实现。</p>
+<h3 id="第一个python程序"><a href="#第一个python程序" class="headerlink" title="第一个python程序"></a>第一个python程序</h3><h4 id="编写python程序方法1"><a href="#编写python程序方法1" class="headerlink" title="编写python程序方法1"></a>编写python程序方法1</h4><p>打开“超级终端”<br><img src="http://p3ek8hcdl.bkt.clouddn.com/image/pyjc001.png" alt=""></p>
+<p>输入python3 ，输入<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![](http://p3ek8hcdl.bkt.clouddn.com/image/pyjc002.png)</span><br><span class="line"></span><br><span class="line">输入以下代码</span><br></pre></td></tr></table></figure></p>
+<p>print(‘hello world’)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![](http://p3ek8hcdl.bkt.clouddn.com/image/pyjc003.png)</span><br><span class="line">#### 编写python程序方法2</span><br><span class="line">打开编辑软件```sublime</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://p3ek8hcdl.bkt.clouddn.com/image/pyjc004.png" alt=""><br>把以下代码，编写如下代码<br><img src="http://p3ek8hcdl.bkt.clouddn.com/pyjc005.png" alt=""><br>保存代码<br><img src="http://p3ek8hcdl.bkt.clouddn.com/image/pyjc006.png" alt=""><br>运行程序<br><img src="http://p3ek8hcdl.bkt.clouddn.com/image/pyjc007.png" alt=""></p>
+<h4 id="另外一种运行python的程序的方法"><a href="#另外一种运行python的程序的方法" class="headerlink" title="另外一种运行python的程序的方法"></a>另外一种运行python的程序的方法</h4><p>在代码第一行写入执行时的python解释器路径，编辑完后需要对此python文件添加’x’权限<br><img src="http://p3ek8hcdl.bkt.clouddn.com/image/pyjc008.png" alt=""></p>
+<p><img src="http://p3ek8hcdl.bkt.clouddn.com/image/pyjc009.png" alt=""></p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>通过用自己熟悉的语言，在程序中对某些代码进行标注说明，这就是注释的作用，能够大大增强程序的可读性</p>
+<h4 id="单行注释"><a href="#单行注释" class="headerlink" title="单行注释"></a>单行注释</h4><p>以#开头，#右边的所有东西当做说明，而不是真正要执行的程序，起辅助说明作用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 我是注释，可以在里写一些功能说明之类的哦</span><br><span class="line">print(&apos;hello world&apos;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="多行注释"><a href="#多行注释" class="headerlink" title="多行注释"></a>多行注释</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&apos;&apos;&apos;我是多行注释，可以写很多很多行的功能说明</span><br><span class="line">        这就是我牛X指出</span><br><span class="line"></span><br><span class="line">        哈哈哈。。。</span><br><span class="line">&apos;&apos;&apos;</span><br></pre></td></tr></table></figure>
+<h4 id="python程序中，中文支持"><a href="#python程序中，中文支持" class="headerlink" title="python程序中，中文支持"></a>python程序中，中文支持</h4><p>如果直接在程序中用到了中文，比如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(&apos;你好&apos;)</span><br></pre></td></tr></table></figure></p>
+<p>如果直接运行输出，程序会出错：<br><img src="http://p3ek8hcdl.bkt.clouddn.com/image/20180701103102.jpg" alt=""><br>解决的办法为：在程序的开头写入如下代码，这就是中文注释<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#coding=utf-8</span><br></pre></td></tr></table></figure></p>
+<p>修改之后的程序:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#coding=utf-8</span><br><span class="line">print(&apos;你好&apos;)</span><br></pre></td></tr></table></figure></p>
+<p>运行结果:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你好</span><br></pre></td></tr></table></figure></p>
+<p>在python的语法规范中推荐使用的方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding:utf-8 -*-</span><br></pre></td></tr></table></figure></p>
+<h3 id="变量以及类型"><a href="#变量以及类型" class="headerlink" title="变量以及类型"></a>变量以及类型</h3><h4 id="变量的定义"><a href="#变量的定义" class="headerlink" title="变量的定义"></a>变量的定义</h4><p>在程序中，有时我们需要对2个数据进行求和，那么该怎样做呢？</p>
+<p>大家类比一下现实生活中，比如去超市买东西，往往咱们需要一个菜篮子，用来进行存储物品，等到所有的物品都购买完成后，在收银台进行结账即可</p>
+<p>如果在程序中，需要把2个数据，或者多个数据进行求和的话，那么就需要把这些数据先存储起来，然后把它们累加起来即可</p>
+<p>在Python中，存储一个数据，需要一个叫做 变量 的东西，如下示例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">num1 = 100 #num1就是一个变量，就好比一个小菜篮子</span><br><span class="line"></span><br><span class="line">num2 = 87  #num2也是一个变量</span><br><span class="line"></span><br><span class="line">result = num1 + num2 #把num1和num2这两个&quot;菜篮子&quot;中的数据进行累加，然后放到 result变量中</span><br></pre></td></tr></table></figure></p>
+<p>说明:</p>
+<ul>
+<li>所谓变量，可以理解为菜篮子，如果需要存储多个数据，最简单的方式是有多个变量，当然了也可以使用一个</li>
+<li>程序就是用来处理数据的，而变量就是用来存储数据的</li>
+</ul>
+<h4 id="变量的类型"><a href="#变量的类型" class="headerlink" title="变量的类型"></a>变量的类型</h4><p>为了更充分的利用内存空间以及更有效率的管理内存，变量是有不同的类型的，如下所示:<br><img src="http://p3ek8hcdl.bkt.clouddn.com/image/pyjc010.png" alt=""></p>
+<ul>
+<li>怎样知道一个变量的类型呢？<ul>
+<li>在python中，只要定义了一个变量，而且它有数据，那么它的类型就已经确定了，不需要咱们开发者主动的去说明它的类型，系统会自动辨别</li>
+<li>可以使用type(变量的名字)，来查看变量的类型</li>
+</ul>
+</li>
+</ul>
+<h3 id="标示符和关键字"><a href="#标示符和关键字" class="headerlink" title="标示符和关键字"></a>标示符和关键字</h3><h4 id="标示符"><a href="#标示符" class="headerlink" title="标示符"></a>标示符</h4><p>什么是标示符，开发人员在程序中自定义的一些符号和名称，标示符是自己定义的,如变量名 、函数名等</p>
+<h4 id="标示符的规则"><a href="#标示符的规则" class="headerlink" title="标示符的规则"></a>标示符的规则</h4><ul>
+<li>标示符由字母、下划线和数字组成，且数字不能开头</li>
+<li>python中的标识符是区分大小写的</li>
+</ul>
+<h4 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h4><ul>
+<li><p>见名知意</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">起一个有意义的名字，尽量做到看一眼就知道是什么意思(提高代码可 读性) 比如: 名字 就定义为 name , 定义学生 用 student</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>驼峰命名法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">小驼峰式命名法（lower camel case）： 第一个单词以小写字母开始；第二个单词的首字母大写，例如：myName、aDog</span><br><span class="line"></span><br><span class="line">大驼峰式命名法（upper camel case）： 每一个单字的首字母都采用大写字母，例如：FirstName、LastName</span><br><span class="line"></span><br><span class="line">不过在程序员中还有一种命名法比较流行，就是用下划线“_”来连接所有的单词，比如send_buf</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h4><ul>
+<li><p>什么是关键字</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python一些具有特殊功能的标示符，这就是所谓的关键字</span><br><span class="line"></span><br><span class="line">关键字，是python已经使用的了，所以不允许开发者自己定义和关键字相同的名字的标示符</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看关键字:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">and     as      assert     break     class      continue    def     del</span><br><span class="line">elif    else    except     exec      finally    for         from    global</span><br><span class="line">if      in      import     is        lambda     not         or      pass</span><br><span class="line">print   raise   return     try       while      with        yield</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>可以通过以下命令进行查看当前系统中python的关键字<br><img src="http://p3ek8hcdl.bkt.clouddn.com/image/pyjc011.png" alt=""></p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><h4 id="普通的输出"><a href="#普通的输出" class="headerlink" title="普通的输出"></a>普通的输出</h4><p>python中变量的输出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 打印提示</span><br><span class="line">print(&apos;hello world&apos;)</span><br><span class="line">print(&apos;给我的卡---印度语，你好的意思&apos;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h4><h5 id="格式化操作的目的"><a href="#格式化操作的目的" class="headerlink" title="格式化操作的目的"></a>格式化操作的目的</h5><p>比如有以下代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pirnt(&quot;我今年10岁&quot;)</span><br><span class="line">pirnt(&quot;我今年11岁&quot;)</span><br><span class="line">pirnt(&quot;我今年12岁&quot;)</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>想一想:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在输出年龄的时候，用了多次&quot;我今年xx岁&quot;，能否简化一下程序呢？？？</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>答:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字符串格式化</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="什么是格式化"><a href="#什么是格式化" class="headerlink" title="什么是格式化"></a>什么是格式化</h5><p>看如下代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">age = 10</span><br><span class="line">print(&quot;我今年%d岁&quot;%age)</span><br><span class="line"></span><br><span class="line">age += 1</span><br><span class="line">print(&quot;我今年%d岁&quot;%age)</span><br><span class="line"></span><br><span class="line">age += 1</span><br><span class="line">print(&quot;我今年%d岁&quot;%age)</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p>在程序中，看到了%这样的操作符，这就是Python中格式化输出。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">age = 18</span><br><span class="line">name = &quot;xiaohua&quot;</span><br><span class="line">print(&quot;我的姓名是%s,年龄是%d&quot;%(name,age))</span><br></pre></td></tr></table></figure></p>
+<p>运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">我的姓名是xiaohua,年龄是18</span><br></pre></td></tr></table></figure></p>
+<h5 id="常用的格式符号"><a href="#常用的格式符号" class="headerlink" title="常用的格式符号"></a>常用的格式符号</h5><p>下面是完整的，它可以与％符号使用列表:<br>|格式符号|转换|<br>|:—:|:—:|<br>|%c    |字符|<br>|%s    |通过str() 字符串转换来格式化|<br>|%i    |有符号十进制整数|<br>|%d    |有符号十进制整数|<br>|%u    |无符号十进制整数|<br>|%o    |八进制整数|<br>|%x    |十六进制整数（小写字母）|<br>|%X    |十六进制整数（大写字母）|<br>|%e    |索引符号（小写’e’）|<br>|%E    |索引符号（大写“E”）|<br>|%f    |浮点实数|<br>|%g    |％f和％e 的简写|<br>|%G    |％f和％E的简写|</p>
+<h4 id="换行输出"><a href="#换行输出" class="headerlink" title="换行输出"></a>换行输出</h4><p>在输出的时候，如果有\n那么，此时\n后的内容会在另外一行显示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(&quot;1234567890-------&quot;) # 会在一行显示</span><br><span class="line"></span><br><span class="line">print(&quot;1234567890\n-------&quot;) # 一行显示1234567890，另外一行显示-------</span><br></pre></td></tr></table></figure>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><h4 id="python2版本中"><a href="#python2版本中" class="headerlink" title="python2版本中"></a>python2版本中</h4><h5 id="raw-input"><a href="#raw-input" class="headerlink" title="raw_input()"></a>raw_input()</h5><p>在Python中，获取键盘输入的数据的方法是采用 raw_input 函数（至于什么是函数，咱们以后的章节中讲解），那么这个 raw_input 怎么用呢?<br>看如下示例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">password = raw_input(&quot;请输入密码:&quot;)</span><br><span class="line">print &apos;您刚刚输入的密码是:&apos;, password</span><br></pre></td></tr></table></figure></p>
+<p>运行结果:</p>
+<p><img src="http://p3ek8hcdl.bkt.clouddn.com/image/py001.gif" alt=""><br>注意:</p>
+<ul>
+<li>raw_input()的小括号中放入的是，提示信息，用来在获取数据之前给用户的一个简单提示</li>
+<li>raw_input()在从键盘获取了数据以后，会存放到等号左边的变量中</li>
+<li>raw_input()会把用户输入的任何值都作为字符串来对待</li>
+</ul>
+<h5 id="input"><a href="#input" class="headerlink" title="input()"></a>input()</h5><p>input()函数与raw_input()类似，但其接受的输入必须是表达式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = input() </span><br><span class="line">123</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">123</span><br><span class="line">&gt;&gt;&gt; type(a)</span><br><span class="line">&lt;type &apos;int&apos;&gt;</span><br><span class="line">&gt;&gt;&gt; a = input()</span><br><span class="line">abc</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">NameError: name &apos;abc&apos; is not defined</span><br><span class="line">&gt;&gt;&gt; a = input()</span><br><span class="line">&quot;abc&quot;</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">&apos;abc&apos;</span><br><span class="line">&gt;&gt;&gt; type(a)</span><br><span class="line">&lt;type &apos;str&apos;&gt;</span><br><span class="line">&gt;&gt;&gt; a = input()</span><br><span class="line">1+3</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">4</span><br><span class="line">&gt;&gt;&gt; a = input()</span><br><span class="line">&quot;abc&quot;+&quot;def&quot;</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">&apos;abcdef&apos;</span><br><span class="line">&gt;&gt;&gt; value = 100</span><br><span class="line">&gt;&gt;&gt; a = input()</span><br><span class="line">value</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">100</span><br></pre></td></tr></table></figure></p>
+<p>input()接受表达式输入，并把表达式的结果赋值给等号左边的变量</p>
+<h4 id="python3版本中"><a href="#python3版本中" class="headerlink" title="python3版本中"></a>python3版本中</h4><p>没有raw_input()函数，只有input()<br>并且 python3中的input与python2中的raw_input()功能一样</p>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><p>python支持以下几种运算符</p>
+<ul>
+<li>算术运算符</li>
+</ul>
+<p>下面以a=10 ,b=20为例进行计算<br>|运算符|描述|实例|<br>|:—:|:—:|:—:|<br>|+|    加|    两个对象相加 a + b 输出结果 30|<br>|-|    减|    得到负数或是一个数减去另一个数 a - b 输出结果 -10|<br>|<em>|    乘|    两个数相乘或是返回一个被重复若干次的字符串 a </em> b 输出结果 200|<br>|/|    除|    x除以y b / a 输出结果 2|<br>|//|    取整除|    返回商的整数部分 9//2 输出结果 4 , 9.0//2.0 输出结果 4.0|<br>|%|    取余|    返回除法的余数 b % a 输出结果 0|<br>|<strong>|    幂|    返回x的y次幂 a</strong>b 为10的20次方， 输出结果 100000000000000000000|</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; 9/2.0</span><br><span class="line">4.5</span><br><span class="line">&gt;&gt;&gt; 9//2.0</span><br><span class="line">4.0</span><br></pre></td></tr></table></figure>
+<ul>
+<li>赋值运算符<br>|运算符|描述|实例|<br>|:—:|:—:|:—:|<br>|=|    赋值运算符|    把=号右边的结果给左边的变量 num=1+2*3 结果num的值为7|</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a, b = 1, 2</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">1</span><br><span class="line">&gt;&gt;&gt; b</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+<ul>
+<li>复合赋值运算符<br>|运算符|描述|实例|<br>|:—:|:—:|:—:|<br>|+=|    加法赋值运算符|    c += a 等效于 c = c + a|<br>|-=|    减法赋值运算符|    c -= a 等效于 c = c - a|<br>|<em>=|    乘法赋值运算符|    c </em>= a 等效于 c = c <em> a|<br>|/=|    除法赋值运算符|    c /= a 等效于 c = c / a|<br>|%=|    取模赋值运算符|    c %= a 等效于 c = c % a|<br>|<strong>=|    幂赋值运算符|    c </strong>= a 等效于 c = c *</em> a|<br>|//=|    取整除赋值运算符|    c //= a 等效于 c = c // a|</li>
+</ul>
+<h3 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h3><h4 id="常用的数据类型转换"><a href="#常用的数据类型转换" class="headerlink" title="常用的数据类型转换"></a>常用的数据类型转换</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">函数</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">int(x [,base ])</td>
+<td style="text-align:center">将x转换为一个整数</td>
+</tr>
+<tr>
+<td style="text-align:center">long(x [,base ])</td>
+<td style="text-align:center">将x转换为一个长整数</td>
+</tr>
+<tr>
+<td style="text-align:center">float(x )</td>
+<td style="text-align:center">将x转换到一个浮点数</td>
+</tr>
+<tr>
+<td style="text-align:center">complex(real [,imag ])</td>
+<td style="text-align:center">创建一个复数</td>
+</tr>
+<tr>
+<td style="text-align:center">str(x )</td>
+<td style="text-align:center">将对象 x 转换为字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">repr(x )</td>
+<td style="text-align:center">将对象 x 转换为表达式字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">eval(str )</td>
+<td style="text-align:center">用来计算在字符串中的有效Python表达式,并返回一个对象</td>
+</tr>
+<tr>
+<td style="text-align:center">tuple(s )</td>
+<td style="text-align:center">将序列 s 转换为一个元组</td>
+</tr>
+<tr>
+<td style="text-align:center">list(s )</td>
+<td style="text-align:center">将序列 s 转换为一个列表</td>
+</tr>
+<tr>
+<td style="text-align:center">chr(x )</td>
+<td style="text-align:center">将一个整数转换为一个字符</td>
+</tr>
+<tr>
+<td style="text-align:center">unichr(x )</td>
+<td style="text-align:center">将一个整数转换为Unicode字符</td>
+</tr>
+<tr>
+<td style="text-align:center">ord(x )</td>
+<td style="text-align:center">将一个字符转换为它的整数值</td>
+</tr>
+<tr>
+<td style="text-align:center">hex(x )</td>
+<td style="text-align:center">将一个整数转换为一个十六进制字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">oct(x )</td>
+<td style="text-align:center">将一个整数转换为一个八进制字符串</td>
+</tr>
+</tbody>
+</table>
+<p>举例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = &apos;100&apos; # 此时a的类型是一个字符串，里面存放了100这3个字符</span><br><span class="line">b = int(a) # 此时b的类型是整型，里面存放的是数字100</span><br><span class="line"></span><br><span class="line">print(&quot;a=%d&quot;%b)</span><br></pre></td></tr></table></figure></p>
+<h3 id="判断语句介绍"><a href="#判断语句介绍" class="headerlink" title="判断语句介绍"></a>判断语句介绍</h3><h4 id="开发中的判断场景"><a href="#开发中的判断场景" class="headerlink" title="开发中的判断场景"></a>开发中的判断场景</h4><p>密码判断<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if 输入的密码 等于 正确密码:</span><br><span class="line">    登陆成功</span><br><span class="line">else:</span><br><span class="line">    登陆失败</span><br></pre></td></tr></table></figure></p>
+<p>重要日期判断<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">if 今天是周六或者周日:</span><br><span class="line">        约妹子</span><br><span class="line"></span><br><span class="line">    if 今天是情人节:</span><br><span class="line">        买玫瑰</span><br><span class="line"></span><br><span class="line">    if 今天发工资:</span><br><span class="line"></span><br><span class="line">        先还信用卡的钱</span><br><span class="line"></span><br><span class="line">        if 有剩余:</span><br><span class="line"></span><br><span class="line">            又可以happy了，O(∩_∩)O哈哈~</span><br><span class="line"></span><br><span class="line">        else:</span><br><span class="line"></span><br><span class="line">            噢，no。。。还的等30天</span><br></pre></td></tr></table></figure></p>
+<p>小总结：</p>
+<ul>
+<li>如果某些条件满足，才能做某件事情，而不满足时不允许做，这就是所谓的判断</li>
+<li>不仅生活中有，在软件开发中“判断”功能也经常会用到</li>
+</ul>
+<h3 id="if判断语句"><a href="#if判断语句" class="headerlink" title="if判断语句"></a>if判断语句</h3><h4 id="if判断语句介绍"><a href="#if判断语句介绍" class="headerlink" title="if判断语句介绍"></a>if判断语句介绍</h4><ul>
+<li><p>if语句是用来进行判断的，其使用格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if 要判断的条件:</span><br><span class="line">    条件成立时，要做的事情</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>demo1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">age = 30</span><br><span class="line"></span><br><span class="line">print &quot;------if判断开始------&quot;</span><br><span class="line"></span><br><span class="line">if age&gt;=18:</span><br><span class="line">    print &quot;我已经成年了&quot;</span><br><span class="line"></span><br><span class="line">print &quot;------if判断结束------&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运行结果:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">------if判断开始------</span><br><span class="line">我已经成年了</span><br><span class="line">------if判断结束------</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>demo2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">age = 16</span><br><span class="line"></span><br><span class="line">print &quot;------if判断开始------&quot;</span><br><span class="line"></span><br><span class="line">if age&gt;=18:</span><br><span class="line">    print &quot;我已经成年了&quot;</span><br><span class="line"></span><br><span class="line">print &quot;------if判断结束------&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运行结果:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">------if判断开始------</span><br><span class="line">------if判断结束------</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>小总结：</p>
+<ul>
+<li>以上2个demo仅仅是age变量的值不一样，结果却不同；能够看得出if判断语句的作用：就是当满足一定条件时才会执行那块代码，否则就不执行那块代码</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li>代码的缩进为一个tab键，或者4个空格</li>
+</ul>
+<h4 id="练一练"><a href="#练一练" class="headerlink" title="练一练"></a>练一练</h4><p>要求：从键盘获取自己的年龄，判断是否大于或者等于18岁，如果满足就输出“哥，已成年，网吧可以去了”</p>
+<ul>
+<li>使用input从键盘中获取数据，并且存入到一个变量中</li>
+<li>使用if语句，来判断 age&gt;=18是否成立</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">age = input(&quot;请输入年龄：&quot;)</span><br><span class="line">if int(age) &gt;= 18:</span><br><span class="line">    print(&quot;哥，已成年，网吧可以去了&quot;)</span><br></pre></td></tr></table></figure>
+<h3 id="比较、关系运算符"><a href="#比较、关系运算符" class="headerlink" title="比较、关系运算符"></a>比较、关系运算符</h3><h4 id="比较-即关系-运算符"><a href="#比较-即关系-运算符" class="headerlink" title="比较(即关系)运算符"></a>比较(即关系)运算符</h4><p>python中的比较运算符如下表<br>|运算符|描述|示例|<br>|:—:|:—:|:—:|<br>|==    |检查两个操作数的值是否相等，如果是则条件变为真。|    如a=3,b=3则（a == b) 为 true.<br>|!=    |检查两个操作数的值是否相等，如果值不相等，则条件变为真。    |如a=1,b=3则(a != b) 为 true.<br>|&lt;&gt;    |检查两个操作数的值是否相等，如果值不相等，则条件变为真。    |如a=1,b=3则(a &lt;&gt; b) 为 true。这个类似于 != 运算符<br>|&gt;    |检查左操作数的值是否大于右操作数的值，如果是，则条件成立。    |如a=7,b=3则(a &gt; b) 为 true.<br>|&lt;    |检查左操作数的值是否小于右操作数的值，如果是，则条件成立。    |如a=7,b=3则(a &lt; b) 为 false.<br>|<code>&gt;=</code>    |检查左操作数的值是否大于或等于右操作数的值，如果是，则条件成立。    |如a=3,b=3则(a &gt;= b) 为 true.<br>|&lt;=    |检查左操作数的值是否小于或等于右操作数的值，如果是，则条件成立。    |如a=3,b=3则(a &lt;= b) 为 true.|</p>
+<h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h4><p>a=10 b=20<br>|运算符|逻辑表达式|描述|示例|<br>|:—:|:—:|:—:|:—:|<br>|and|    x and y    |布尔”与” - 如果 x 为 False，x and y 返回 False，否则它返回 y 的计算值。|    (a and b) 返回 20。<br>|or    |x or y    |布尔”或” - 如果 x 是 True，它返回 True，否则它返回 y 的计算值。|    (a or b) 返回 10。<br>|not|    not x|    布尔”非” - 如果 x 为 True，返回 False 。如果 x 为 False，它返回 True。|    not(a and b) 返回 False</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Mr.T 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="Mr.T 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+            <a href="/tags/编程/" rel="tag"><i class="fa fa-tag"></i> 编程</a>
+          
+            <a href="/tags/基础/" rel="tag"><i class="fa fa-tag"></i> 基础</a>
+          
+            <a href="/tags/语法/" rel="tag"><i class="fa fa-tag"></i> 语法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/13/Mysql手工盲注-延时注入/" rel="next" title="Mysql手工盲注(延时注入)">
+                <i class="fa fa-chevron-left"></i> Mysql手工盲注(延时注入)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzczNy8xMDI5MQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="Mr.T" />
+            
+              <p class="site-author-name" itemprop="name">Mr.T</p>
+              <p class="site-description motion-element" itemprop="description">web安全，渗透测试，PHP，Python，java。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#认识python和基础知识"><span class="nav-number">1.</span> <span class="nav-text">认识python和基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#认识python"><span class="nav-number">1.1.</span> <span class="nav-text">认识python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一个python程序"><span class="nav-number">1.2.</span> <span class="nav-text">第一个python程序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#编写python程序方法1"><span class="nav-number">1.2.1.</span> <span class="nav-text">编写python程序方法1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#另外一种运行python的程序的方法"><span class="nav-number">1.2.2.</span> <span class="nav-text">另外一种运行python的程序的方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释"><span class="nav-number">1.3.</span> <span class="nav-text">注释</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单行注释"><span class="nav-number">1.3.1.</span> <span class="nav-text">单行注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多行注释"><span class="nav-number">1.3.2.</span> <span class="nav-text">多行注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python程序中，中文支持"><span class="nav-number">1.3.3.</span> <span class="nav-text">python程序中，中文支持</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量以及类型"><span class="nav-number">1.4.</span> <span class="nav-text">变量以及类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#变量的定义"><span class="nav-number">1.4.1.</span> <span class="nav-text">变量的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变量的类型"><span class="nav-number">1.4.2.</span> <span class="nav-text">变量的类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标示符和关键字"><span class="nav-number">1.5.</span> <span class="nav-text">标示符和关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#标示符"><span class="nav-number">1.5.1.</span> <span class="nav-text">标示符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标示符的规则"><span class="nav-number">1.5.2.</span> <span class="nav-text">标示符的规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命名规则"><span class="nav-number">1.5.3.</span> <span class="nav-text">命名规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关键字"><span class="nav-number">1.5.4.</span> <span class="nav-text">关键字</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出"><span class="nav-number">1.6.</span> <span class="nav-text">输出</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#普通的输出"><span class="nav-number">1.6.1.</span> <span class="nav-text">普通的输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#格式化输出"><span class="nav-number">1.6.2.</span> <span class="nav-text">格式化输出</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#格式化操作的目的"><span class="nav-number">1.6.2.1.</span> <span class="nav-text">格式化操作的目的</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#什么是格式化"><span class="nav-number">1.6.2.2.</span> <span class="nav-text">什么是格式化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#常用的格式符号"><span class="nav-number">1.6.2.3.</span> <span class="nav-text">常用的格式符号</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#换行输出"><span class="nav-number">1.6.3.</span> <span class="nav-text">换行输出</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入"><span class="nav-number">1.7.</span> <span class="nav-text">输入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#python2版本中"><span class="nav-number">1.7.1.</span> <span class="nav-text">python2版本中</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#raw-input"><span class="nav-number">1.7.1.1.</span> <span class="nav-text">raw_input()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#input"><span class="nav-number">1.7.1.2.</span> <span class="nav-text">input()</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python3版本中"><span class="nav-number">1.7.2.</span> <span class="nav-text">python3版本中</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符"><span class="nav-number">1.8.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型转换"><span class="nav-number">1.9.</span> <span class="nav-text">数据类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用的数据类型转换"><span class="nav-number">1.9.1.</span> <span class="nav-text">常用的数据类型转换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断语句介绍"><span class="nav-number">1.10.</span> <span class="nav-text">判断语句介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#开发中的判断场景"><span class="nav-number">1.10.1.</span> <span class="nav-text">开发中的判断场景</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#if判断语句"><span class="nav-number">1.11.</span> <span class="nav-text">if判断语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if判断语句介绍"><span class="nav-number">1.11.1.</span> <span class="nav-text">if判断语句介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#练一练"><span class="nav-number">1.11.2.</span> <span class="nav-text">练一练</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#比较、关系运算符"><span class="nav-number">1.12.</span> <span class="nav-text">比较、关系运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#比较-即关系-运算符"><span class="nav-number">1.12.1.</span> <span class="nav-text">比较(即关系)运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">1.12.2.</span> <span class="nav-text">逻辑运算符</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mr.T</span>
+
+  
+</div>
+<div class="busuanzi-count">
+  <script async="" src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv">1081</span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv">2439</span>
+      
+    </span>
+  
+</div>
+
+
+<!-- 
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+-->
+
+
+
+<!-- 
+  <span class="post-meta-divider">|</span>
+  -->
+
+
+
+<!--
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+ -->
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

